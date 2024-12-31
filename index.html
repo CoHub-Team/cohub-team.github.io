@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frigoo - Hedefsel Bazda Arkadaşlık Platformu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/" onclick="handleLogoClick(event)">
+                <img src="assets/frigoo-logo.png" alt="Frigoo Logo">
+            </a>
+        </div>
+        <nav>
+            <a href="#features">Özellikler</a>
+            <a href="#how-it-works">Nasıl Çalışır</a>
+            <a href="about.html">Hakkımızda</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Hedeflerinize Giden Yolda<br>Yalnız Değilsiniz</h1>
+            <p class="hero-text">Frigoo ile benzer hedeflere sahip insanlarla tanışın, birlikte büyüyün ve başarıya ulaşın.</p>
+            <div class="cta-buttons">
+                <button class="primary-btn" onclick="scrollToSection('cta')">
+                    <span>Beta'ya Katıl</span>
+                    <i class="fas fa-arrow-right btn-icon"></i>
+                </button>
+                <button class="secondary-btn" onclick="scrollToSection('features')">
+                    <span>Daha Fazla Bilgi</span>
+                    <i class="fas fa-info-circle btn-icon"></i>
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="assets/mainPage.png" alt="Frigoo App" class="hero-img active">
+            <img src="assets/workflow.png" alt="Frigoo Workflow" class="hero-img">
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <h2>Neden Frigoo?</h2>
+        <p class="features-subtitle">Hedeflerinize ulaşmanın en etkili yolu, aynı yolda yürüyen insanlarla tanışmaktır.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-brain"></i>
+                <h3>Akıllı Eşleştirme</h3>
+                <p>Yapay zeka destekli sistemimiz, hedeflerinize ve ilgi alanlarınıza göre size en uygun arkadaşları bulur.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-video"></i>
+                <h3>Görüntülü Sohbet</h3>
+                <p>Özel work space alanlarında görüntülü görüşmeler yaparak deneyimlerinizi paylaşın.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-users"></i>
+                <h3>Network Geliştirme</h3>
+                <p>Dünyanın her yerinden benzer hedeflere sahip insanlarla tanışın ve network'ünüzü genişletin.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-laptop-house"></i>
+                <h3>Work Space Alanları</h3>
+                <p>Girişimciler, sporcular ve öğrenciler için özelleştirilmiş çalışma alanlarında iş birliği yapın.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <h2>Nasıl Çalışır?</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Hedefini Belirle</h3>
+                <p>Dil öğrenme, spor yapma veya yeni bir hobi edinme gibi hedeflerini seç.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Eşini Bul</h3>
+                <p>Yapay zeka destekli eşleştirme sistemiyle sana en uygun arkadaşları keşfet.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Birlikte İlerle</h3>
+                <p>Özel çalışma alanlarında iletişim kur ve hedefine doğru birlikte ilerle.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider-container">
+        <!-- Slayt 1 -->
+        <div class="slide active">
+            <div class="slide-text">
+                <h2>Girişimci Eşleştirme</h2>
+                <p>Girişimcilik hedefleri olan ve becerileri senin ihtiyacınla ölçüşen kişilerle tanış. Hayalini kurduğun girişimi beraber kurabileceğin co-founder'ını bul ve birlikte başarıya ulaşın.</p>
+            </div>
+            <div class="slide-image">
+                <img src="assets/girisimci.png" alt="Girişimci Eşleştirme">
+            </div>
+        </div>
+
+        <!-- Slayt 2 -->
+        <div class="slide">
+            <div class="slide-image">
+                <img src="assets/running.png" alt="Koşu">
+            </div>
+            <div class="slide-text">
+                <h2>Koşu Partneri</h2>
+                <p>Seviyene uygun bir koşu arkadaşı bul ve motivasyonunu yüksek tut. Birlikte koşarak hedeflerine daha hızlı ulaş.</p>
+            </div>
+        </div>
+
+        <!-- Slayt 3 -->
+        <div class="slide">
+            <div class="slide-text">
+                <h2>Dil Pratiği</h2>
+                <p>Ana dili senin öğrenmek istediğin dil olan biriyle tanış ve karşılıklı pratik yap. Konuşma pratiği yaparak dil öğrenimini hızlandır.</p>
+            </div>
+            <div class="slide-image">
+                <img src="assets/language.png" alt="Dil Öğrenme">
+            </div>
+        </div>
+
+        <!-- Slayt 4 -->
+        <div class="slide">
+            <div class="slide-image">
+                <img src="assets/pilates.png" alt="Pilates">
+            </div>
+            <div class="slide-text">
+                <h2>Pilates & Yoga</h2>
+                <p>Pilates veya yoga pratiklerini birlikte yapabileceğin bir partner bul. Düzenli egzersiz yaparak hem zihinsel hem de fiziksel sağlığını iyileştir.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider Noktaları -->
+    <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <section id="cta" class="cta-section">
+        <div class="cta-content">
+            <h2>Hedefine Giden Yolculuğa Başla</h2>
+            <p>Beta sürecinde ilk kullanıcılarımızdan biri ol ve özel avantajlardan yararlan!</p>
+            <form class="subscribe-form" id="emailForm" onsubmit="return false;">
+                <div class="input-wrapper">
+                    <div class="input-container">
+                        <i class="far fa-envelope input-icon"></i>
+                        <input type="email" id="emailInput" placeholder="E-posta adresin" required>
+                    </div>
+                    <button type="submit" id="submitButton" class="subscribe-btn">
+                        <span class="btn-text">Beta'ya Katıl</span>
+                        <i class="fas fa-arrow-right btn-icon"></i>
+                    </button>
+                </div>
+                <div id="messageContainer" class="message-container"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="assets/frigoo-logo.png" alt="Frigoo Logo" class="footer-logo">
+                    <p class="footer-desc">Hedeflerinize giden yolda size eşlik edecek arkadaşlar bulun.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-group">
+                    <h4>Keşfet</h4>
+                    <nav class="footer-nav">
+                        <a href="#features">Özellikler</a>
+                        <a href="#how-it-works">Nasıl Çalışır</a>
+                        <a href="about.html">Hakkımızda</a>
+                    </nav>
+                </div>
+
+                <div class="footer-links-group">
+                    <h4>İletişim</h4>
+                    <div class="contact-info">
+                        <a href="mailto:info@frigoo.com"><i class="far fa-envelope"></i> info@frigoo.com</a>
+                        <a href="#"><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Frigoo. Tüm hakları saklıdır.</p>
+                <div class="legal-links">
+                    <a href="#">Gizlilik Politikası</a>
+                    <a href="#">Kullanım Koşulları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase ve diğer scriptler -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>

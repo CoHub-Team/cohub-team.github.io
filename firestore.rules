@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /subscribers/{document} {
+      allow write: if request.resource.data.keys().hasOnly(['email', 'timestamp']) 
+                   && request.resource.data.email is string
+                   && request.resource.data.email.matches('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$');
+      allow read: if false;
+    }
+  }
+} 
