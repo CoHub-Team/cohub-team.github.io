@@ -319,12 +319,14 @@ nav a:hover {
 
 .slide.active {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 60px;
+    padding-top: 40px;
 }
 
 .slide-text {
     flex: 1;
+    margin-top: -20px;
 }
 
 .slide-text h2 {
@@ -341,6 +343,7 @@ nav a:hover {
 
 .slide-image {
     flex: 1;
+    position: relative;
 }
 
 .slide-image img {
@@ -1353,4 +1356,33 @@ html {
     .contact-link {
         width: 100%;
     }
+}
+
+/* Özel görsel boyutlandırmaları */
+.slide img[src*="entrepeuner.png"],
+.slide img[src*="running.png"] {
+    width: 130%;
+    max-width: 700px;
+    height: auto;
+    object-fit: contain;
+    margin-top: -20px;
+}
+
+/* Diğer slider görselleri için mevcut boyutları koruyalım */
+.slide-image img {
+    width: 550px;
+    height: 450px;
+    object-fit: cover;
+}
+
+/* Birinci ve üçüncü slayt için özel konumlandırma */
+.slide:nth-child(1) .slide-image img,
+.slide:nth-child(3) .slide-image img {
+    position: absolute;
+    right: 50px;
+}
+
+/* Sadece birinci slayt için sol konumlandırma */
+.slide:nth-child(1) .slide-image img {
+    left: -50px; /* Sola kaydırmak için negatif değer */
 }
