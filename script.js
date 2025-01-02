@@ -30,7 +30,7 @@ function scrollToSection(sectionId) {
         });
 
         // CTA section'a scroll edildiğinde email input'una focus ol
-        if (sectionId === 'cta') {
+        if (sectionId === 'join') {
             // Scroll tamamlandıktan sonra focus ol
             setTimeout(() => {
                 const emailInput = document.getElementById('emailInput');
