@@ -1720,3 +1720,65 @@ html {
         display: block;
     }
 }
+
+/* Dil Seçici Stilleri */
+.language-selector {
+    position: relative;
+    margin-left: 2rem;
+}
+
+.current-lang {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--light-gray);
+    transition: all 0.3s ease;
+}
+
+.current-lang:hover {
+    background: var(--primary-light);
+}
+
+/* İkonları kaldır */
+.lang-flag {
+    display: none; /* İkonları gizle */
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 8px;
+    margin-top: 8px;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.lang-dropdown.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--dark);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.lang-option:hover {
+    background: var(--light-gray);
+}

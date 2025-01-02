@@ -23,6 +23,24 @@
             <a href="#how-it-works">Nasıl Çalışır</a>
             <a href="about.html">Hakkımızda</a>
         </nav>
+        <!-- Dil Seçici -->
+        <div class="language-selector">
+            <div class="current-lang" onclick="toggleLanguageMenu()">
+                <img src="assets/tr-flag.png" alt="Türkçe" class="lang-flag">
+                <span>TR</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="lang-dropdown">
+                <a href="javascript:void(0)" onclick="changeLanguage('en')" class="lang-option">
+                    <img src="assets/en-flag.png" alt="English" class="lang-flag">
+                    <span>EN</span>
+                </a>
+                <a href="javascript:void(0)" onclick="changeLanguage('tr')" class="lang-option">
+                    <img src="assets/tr-flag.png" alt="Türkçe" class="lang-flag">
+                    <span>TR</span>
+                </a>
+            </div>
+        </div>
         <div class="menu-overlay"></div>
         <div class="hamburger-menu">
             <span class="hamburger-line"></span>
