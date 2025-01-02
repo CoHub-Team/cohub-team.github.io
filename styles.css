@@ -53,11 +53,7 @@ nav a:hover {
     color: var(--primary);
 }
 
-/* Desktop navigasyon */
-nav {
-    display: flex;
-    align-items: center;
-}
+
 
 /* Hero Section */
 .hero-section {
@@ -727,7 +723,6 @@ nav {
     font-size: 0.95rem;
     transition: all 0.3s ease;
     display: flex;
-    align-items: center;
     gap: 8px;
 }
 
@@ -812,12 +807,13 @@ nav {
 
 @media screen and (max-width: 600px) {
     .hero-img {
-        margin-left: 0;
-        width: 512px;
+        margin-left: 4rem!important;
+        width: 600px!important;
     }
 
     .hero-img:nth-child(2) {
-        width: 256px;
+        margin-left: 1.5rem!important;
+        width: 320px!important;
     }
   }
 
@@ -1589,10 +1585,7 @@ html {
 
 /* Mobil görünüm için medya sorgusu */
 @media screen and (max-width: 768px) {
-    /* Desktop nav'ı tamamen gizle */
-    nav {
-        display: none !important;
-    }
+
     
     /* Header içindeki düzen */
     header {
