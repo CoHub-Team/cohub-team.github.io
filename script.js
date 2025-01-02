@@ -251,6 +251,17 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.contact-section p').textContent = texts.contactDesc;
             document.querySelector('.contact-section .primary-btn span').textContent = texts.getInTouch;
         }
+
+        // Mission & Vision Section
+        const missionSection = document.querySelector('.mission-section');
+        if (missionSection) {
+            missionSection.querySelector('h2').textContent = texts.missionVisionTitle;
+            const missionCards = document.querySelectorAll('.mission-card');
+            missionCards[0].querySelector('h3').textContent = texts.ourMission;
+            missionCards[0].querySelector('p').textContent = texts.missionText;
+            missionCards[1].querySelector('h3').textContent = texts.ourVision;
+            missionCards[1].querySelector('p').textContent = texts.visionText;
+        }
     }
 });
 
@@ -344,7 +355,7 @@ const translations = {
         location: "İstanbul, Türkiye",
         privacyPolicy: "Gizlilik Politikası",
         terms: "Kullanım Koşulları",
-        copyright: "© 2024 Frigoo. Tüm hakları saklıdır.",
+        copyright: "© 2025 Frigoo. Tüm hakları saklıdır.",
 
         // About Page
         ourStory: "Hikayemiz",
@@ -352,6 +363,7 @@ const translations = {
         aboutHeroText: "Frigoo, ortak hedefleri olan insanları bir araya getirerek birlikte büyümeyi ve gelişmeyi amaçlayan yenilikçi bir platformdur.",
         
         // Mission & Vision
+        missionVisionTitle: "Misyon ve Vizyonumuz",
         ourMission: "Misyonumuz",
         missionText: "İnsanların hedeflerine ulaşma yolculuğunda yalnız olmadıklarını hissettirmek ve bu yolculukta onlara en uygun yol arkadaşlarını bulmalarını sağlamak.",
         ourVision: "Vizyonumuz",
@@ -376,7 +388,9 @@ const translations = {
         // Contact Section
         contactUs: "Bize Ulaşın",
         contactDesc: "Sorularınız veya önerileriniz için bizimle iletişime geçin.",
-        getInTouch: "İletişime Geç"
+        getInTouch: "İletişime Geç",
+
+        missionVisionTitle: "Misyon ve Vizyonumuz"
     },
     en: {
         // Navigation
@@ -434,7 +448,7 @@ const translations = {
         location: "Istanbul, Turkey",
         privacyPolicy: "Privacy Policy",
         terms: "Terms of Use",
-        copyright: "© 2024 Frigoo. All rights reserved.",
+        copyright: "© 2025 Frigoo. All rights reserved.",
 
         // About Page
         ourStory: "Our Story",
@@ -442,6 +456,7 @@ const translations = {
         aboutHeroText: "Frigoo is an innovative platform that aims to bring together people with common goals and help them grow and develop together.",
         
         // Mission & Vision
+        missionVisionTitle: "Our Mission and Vision",
         ourMission: "Our Mission",
         missionText: "To make people feel that they are not alone in their journey to achieve their goals and help them find the most suitable companions on this journey.",
         ourVision: "Our Vision",
@@ -466,7 +481,9 @@ const translations = {
         // Contact Section
         contactUs: "Contact Us",
         contactDesc: "Get in touch with us for your questions or suggestions.",
-        getInTouch: "Get in Touch"
+        getInTouch: "Get in Touch",
+
+        missionVisionTitle: "Our Mission and Vision"
     }
 };
 
@@ -516,13 +533,22 @@ document.addEventListener('DOMContentLoaded', () => {
 function updatePageContent(lang) {
     const texts = translations[lang];
     
-    // Nav linkleri (her sayfada ortak)
+    // Nav linkleri ve dil göstergesi (her sayfada ortak)
     document.querySelectorAll('nav a, .mobile-nav a').forEach(link => {
         const href = link.getAttribute('href');
         if (href === '#features' || href === '/#features') link.textContent = texts.features;
         if (href === '#how-it-works' || href === '/#how-it-works') link.textContent = texts.howItWorks;
         if (href === 'about.html') link.textContent = texts.aboutUs;
     });
+
+    // Dil göstergesini güncelle (her sayfada ortak)
+    const currentLang = document.querySelector('.current-lang span');
+    const flagImg = document.querySelector('.current-lang img');
+    if (currentLang && flagImg) {
+        currentLang.textContent = lang.toUpperCase();
+        flagImg.src = `assets/${lang}-flag.png`;
+        flagImg.alt = lang === 'tr' ? 'Türkçe' : 'English';
+    }
 
     // About sayfası içeriği
     if (document.querySelector('.about-hero')) {
@@ -531,12 +557,16 @@ function updatePageContent(lang) {
         document.querySelector('.about-hero-content h1').innerHTML = texts.aboutHeroTitle;
         document.querySelector('.about-hero-content p').textContent = texts.aboutHeroText;
 
-        // Mission & Vision Cards
-        const missionCards = document.querySelectorAll('.mission-card');
-        missionCards[0].querySelector('h3').textContent = texts.ourMission;
-        missionCards[0].querySelector('p').textContent = texts.missionText;
-        missionCards[1].querySelector('h3').textContent = texts.ourVision;
-        missionCards[1].querySelector('p').textContent = texts.visionText;
+        // Mission & Vision Section
+        const missionSection = document.querySelector('.mission-section');
+        if (missionSection) {
+            missionSection.querySelector('h2').textContent = texts.missionVisionTitle;
+            const missionCards = document.querySelectorAll('.mission-card');
+            missionCards[0].querySelector('h3').textContent = texts.ourMission;
+            missionCards[0].querySelector('p').textContent = texts.missionText;
+            missionCards[1].querySelector('h3').textContent = texts.ourVision;
+            missionCards[1].querySelector('p').textContent = texts.visionText;
+        }
 
         // Values Section
         if (document.querySelector('.values-section')) {
@@ -556,6 +586,9 @@ function updatePageContent(lang) {
             document.querySelector('.contact-section p').textContent = texts.contactDesc;
             document.querySelector('.contact-section .primary-btn span').textContent = texts.getInTouch;
         }
+
+        // Mission & Vision başlığı
+        document.querySelector('.mission-section h2').textContent = texts.missionVisionTitle;
     }
 
     // Ana sayfa içeriği
@@ -640,11 +673,21 @@ function updatePageContent(lang) {
 
 // Current lang göstergesini güncelle
 function updateCurrentLangDisplay(lang) {
-    const currentLang = document.querySelector('.current-lang');
-    const flagImg = currentLang.querySelector('img');
-    const langText = currentLang.querySelector('span');
+    const currentLang = document.querySelector('.current-lang span');
+    const flagImg = document.querySelector('.current-lang img');
     
-    flagImg.src = `assets/${lang}-flag.png`;
-    flagImg.alt = lang === 'tr' ? 'Türkçe' : 'English';
-    langText.textContent = lang.toUpperCase();
+    // Container'daki dil göstergesini aktif dile göre güncelle
+    currentLang.textContent = lang.toUpperCase();
+    
+    // Container'daki bayrağı aktif dile göre güncelle
+    if (flagImg) {
+        flagImg.src = `assets/${lang}-flag.png`;
+        flagImg.alt = lang === 'tr' ? 'Türkçe' : 'English';
+    }
+
+    // Dropdown'daki tüm seçenekleri göster
+    const dropdownOptions = document.querySelectorAll('.lang-option');
+    dropdownOptions.forEach(option => {
+        option.style.display = 'flex';
+    });
 }
