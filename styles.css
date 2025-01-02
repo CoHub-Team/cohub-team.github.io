@@ -53,6 +53,12 @@ nav a:hover {
     color: var(--primary);
 }
 
+/* Desktop navigasyon */
+nav {
+    display: flex;
+    align-items: center;
+}
+
 /* Hero Section */
 .hero-section {
     padding: 120px 5% 80px;
@@ -121,6 +127,13 @@ nav a:hover {
     transition: opacity 1s ease-in-out;
     filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
     display: none;
+}
+
+/* İkinci görselin (workflow.png) boyutunu küçült */
+.hero-img:nth-child(2) {
+    width: 50%; /* Ana boyutu %80'e düşür */
+    max-width: 600px; /* Maksimum genişliği sınırla */
+    margin: 0 auto; /* Yatayda ortala */
 }
 
 .hero-img.active {
@@ -816,8 +829,26 @@ nav a:hover {
     }
 
     .hero-image {
+        width: 100%;
         margin-left: 0;
-        width: 768px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-img {
+        position: relative;
+        left: auto;
+        right: auto;
+        margin: 0 auto;
+        width: 120%;
+        max-width: 800px;
+    }
+
+    .hero-img:nth-child(2) {
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
     }
 
     .cta-buttons {
@@ -1133,6 +1164,18 @@ html {
     padding: 120px 5% 80px;
     text-align: center;
     position: relative;
+    overflow: hidden;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
 }
 
 .about-badge {
@@ -1387,5 +1430,293 @@ html {
 
 /* Sadece birinci slayt için sol konumlandırma */
 .slide:nth-child(1) .slide-image img {
-    left: -50px; /* Sola kaydırmak için negatif değer */
+    left: -50px;
+}
+
+/* About hero animasyonları */
+.about-hero-content {
+    opacity: 0;
+    animation: fadeInLeft 1s ease-out forwards;
+    visibility: hidden;
+}
+
+.about-badge {
+    opacity: 0;
+    animation: fadeInLeft 1s ease-out 0.2s forwards;
+    visibility: hidden;
+}
+
+.about-hero h1 {
+    opacity: 0;
+    animation: fadeInLeft 1s ease-out 0.4s forwards;
+    visibility: hidden;
+}
+
+.about-hero p {
+    opacity: 0;
+    animation: fadeInLeft 1s ease-out 0.6s forwards;
+    visibility: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 204, 51, 0.1) 0%, rgba(255, 204, 51, 0.05) 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeInRight 1s ease-out 0.3s forwards;
+}
+
+/* Hero section her zaman görünür olmalı */
+.hero-section {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* About hero animasyonları için özel görünürlük sınıfı */
+.about-hero-content.visible,
+.about-badge.visible,
+.about-hero h1.visible,
+.about-hero p.visible,
+.about-hero::before.visible {
+    visibility: visible;
+}
+
+/* Scroll animasyonları için temel stiller */
+.features-section,
+.how-it-works,
+.slider-container,
+.cta-section,
+.mission-section,
+.values-section,
+.contact-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+}
+
+/* Görünürlük sınıfı */
+.fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Slider Responsive Düzenlemeleri */
+@media (max-width: 768px) {
+    .slider-container {
+        height: auto;
+        min-height: 600px;
+        padding: 20px;
+        margin: 40px auto;
+        width: 95%; /* Container genişliğini artır */
+    }
+
+    .slide.active {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .slide-text {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .slide-text h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .slide-text p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Tüm slider görselleri için mobil boyutlandırma */
+    .slide-image img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 450px !important;
+        position: static !important;
+        margin: 0 auto !important;
+        left: auto !important;
+        right: auto !important;
+    }
+
+    /* Özel görsel boyutlandırmalarını mobilde override et */
+    .slide img[src*="entrepeuner.png"],
+    .slide img[src*="running.png"] {
+        width: 100% !important;
+        max-width: 450px !important;
+        margin: 0 auto !important;
+    }
+
+    /* Slider dots için düzenleme */
+    .slider-dots {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Daha küçük ekranlar için ek düzenlemeler */
+@media (max-width: 480px) {
+    .slider-container {
+        min-height: 500px;
+    }
+
+    .slide-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .slide-image img {
+        max-width: 400px !important;
+    }
+}
+
+/* Mobil görünüm için medya sorgusu */
+@media screen and (max-width: 768px) {
+    /* Desktop nav'ı tamamen gizle */
+    nav {
+        display: none !important;
+    }
+    
+    /* Header içindeki düzen */
+    header {
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Hamburger menüyü göster */
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    /* Mobil nav'ı göster */
+    .mobile-nav {
+        display: block;
+    }
+    
+    /* Logo boyutu */
+    .logo img {
+        height: 35px;
+    }
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+    margin-left: auto;
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 2px;
+    background-color: var(--dark);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: var(--white);
+    padding: 80px 40px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav a {
+    display: block;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    color: var(--dark);
+    text-decoration: none;
+    border-bottom: 1px solid var(--light-gray);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.mobile-nav.active a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-nav a:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav a:nth-child(2) { transition-delay: 0.2s; }
+.mobile-nav a:nth-child(3) { transition-delay: 0.3s; }
+
+.mobile-nav a:hover {
+    color: var(--primary);
+    padding-left: 10px;
+}
+
+/* Hamburger Animation */
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Overlay */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 998;
+}
+
+.menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
 }

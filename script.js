@@ -111,13 +111,51 @@ function initHeroImageSwitcher() {
     setInterval(switchImage, 5000);
 }
 
+// Scroll animasyonları için Intersection Observer
+function initScrollAnimations() {
+    const sections = document.querySelectorAll('.features-section, .how-it-works, .slider-container, .cta-section, .mission-section, .values-section, .contact-section');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '-50px'
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}
+
+// About hero animasyonları için
+function initAboutHeroAnimations() {
+    const elements = document.querySelectorAll('.about-hero-content, .about-badge, .about-hero h1, .about-hero p');
+    
+    elements.forEach(element => {
+        element.classList.add('visible');
+    });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, 0);
-    initSlider();
-    initHeroImageSwitcher();
     
-    // Email form submit handler
+    // Her sayfada scroll animasyonlarını başlat
+    initScrollAnimations();
+    
+    // Diğer init fonksiyonları
+    if (document.querySelector('.slider-container')) {
+        initSlider();
+    }
+    if (document.querySelector('.hero-image')) {
+        initHeroImageSwitcher();
+    }
+    
+    // Email form handler
     document.getElementById('emailForm').addEventListener('submit', async (e) => {
         e.preventDefault();
         
@@ -165,4 +203,41 @@ document.addEventListener('DOMContentLoaded', () => {
             button.classList.remove('loading');
         }
     });
+
+    // Eğer about sayfasındaysak
+    if (document.querySelector('.about-hero')) {
+        initAboutHeroAnimations();
+    }
+});
+
+// Add these functions to your script.js
+function toggleMobileMenu() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const overlay = document.querySelector('.menu-overlay');
+    
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    overlay.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+}
+
+function closeMobileMenu() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const overlay = document.querySelector('.menu-overlay');
+    
+    hamburger.classList.remove('active');
+    mobileNav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Add event listeners
+document.querySelector('.hamburger-menu').addEventListener('click', toggleMobileMenu);
+document.querySelector('.menu-overlay').addEventListener('click', closeMobileMenu);
+document.querySelectorAll('.mobile-nav a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
 });
