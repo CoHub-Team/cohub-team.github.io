@@ -69,8 +69,26 @@ function initSlider() {
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-            dots[i].classList.toggle('active', i === index);
+            if (i === index) {
+                slide.classList.add('active');
+                dots[i].classList.add('active');
+                
+                // Dil kontrolü ve resim görünürlüğü
+                const currentLang = localStorage.getItem('preferredLanguage') || 'tr';
+                const trImage = slide.querySelector('.tr-image');
+                const enImage = slide.querySelector('.en-image');
+                
+                if (currentLang === 'en') {
+                    if (trImage) trImage.style.display = 'none';
+                    if (enImage) enImage.style.display = 'block';
+                } else {
+                    if (trImage) trImage.style.display = 'block';
+                    if (enImage) enImage.style.display = 'none';
+                }
+            } else {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            }
         });
     }
 
@@ -338,7 +356,7 @@ const translations = {
         runningPartner: "Koşu Partneri",
         runningDesc: "Seviyene uygun bir koşu arkadaşı bul ve motivasyonunu yüksek tut. Birlikte koşarak hedeflerine daha hızlı ulaş.",
         languagePractice: "Dil Pratiği",
-        languageDesc: "Ana dili senin öğrenmek istediğin dil olan biriyle tanış ve karşılıklı pratik yap. Konuşma pratiği yaparak dil öğrenimini hızlandır.",
+        languageDesc: "İster yeni başlamış ol, ister ilerliyor ol - hedefindeki dil için mükemmel bir pratik arkadaşı bul. Gerçek konuşmalarla dil öğrenimini turbo hızda ilerlet ve akıcı konuşmaya başla!.",
         pilatesYoga: "Pilates & Yoga",
         pilatesDesc: "Pilates veya yoga pratiklerini birlikte yapabileceğin bir partner bul. Düzenli egzersiz yaparak hem zihinsel hem de fiziksel sağlığını iyileştir.",
 
@@ -431,7 +449,7 @@ const translations = {
         runningPartner: "Running Partner",
         runningDesc: "Find a running buddy at your level and stay motivated. Reach your goals faster by running together.",
         languagePractice: "Language Practice",
-        languageDesc: "Meet native speakers of the language you want to learn and practice together. Accelerate your language learning through conversation practice.",
+        languageDesc: "Whether you're just starting out or making progress - find the perfect practice partner for your target language. Accelerate your language learning through real conversations and start speaking fluently!",
         pilatesYoga: "Pilates & Yoga",
         pilatesDesc: "Find a partner to practice pilates or yoga together. Improve both your mental and physical health through regular exercise.",
 
@@ -510,6 +528,21 @@ function changeLanguage(lang) {
     
     // Current lang göstergesini güncelle
     updateCurrentLangDisplay(lang);
+
+    // Aktif slide'ı bul ve resimlerini güncelle
+    const activeSlide = document.querySelector('.slide.active');
+    if (activeSlide) {
+        const trImage = activeSlide.querySelector('.tr-image');
+        const enImage = activeSlide.querySelector('.en-image');
+        
+        if (lang === 'en') {
+            if (trImage) trImage.style.display = 'none';
+            if (enImage) enImage.style.display = 'block';
+        } else {
+            if (trImage) trImage.style.display = 'block';
+            if (enImage) enImage.style.display = 'none';
+        }
+    }
 }
 
 // Dışarı tıklandığında dropdown'ı kapat
@@ -522,11 +555,31 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Sayfa yüklendiğinde tercih edilen dili kontrol et
+// Sayfa yüklendiğinde tercih edilen dili kontrol et ve resimleri ayarla
 document.addEventListener('DOMContentLoaded', () => {
     const preferredLanguage = localStorage.getItem('preferredLanguage') || 'tr';
     updatePageContent(preferredLanguage);
     updateCurrentLangDisplay(preferredLanguage);
+
+    // Sayfa yüklendiğinde de resimleri kontrol et
+    const trImages = document.querySelectorAll('.tr-image');
+    const enImages = document.querySelectorAll('.en-image');
+
+    if (preferredLanguage === 'en') {
+        trImages.forEach(img => {
+            img.style.display = 'none';
+        });
+        enImages.forEach(img => {
+            img.style.display = 'block';
+        });
+    } else {
+        trImages.forEach(img => {
+            img.style.display = 'block';
+        });
+        enImages.forEach(img => {
+            img.style.display = 'none';
+        });
+    }
 });
 
 // Sayfadaki metinleri güncelle
