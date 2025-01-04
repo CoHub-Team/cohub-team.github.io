@@ -281,6 +281,10 @@ document.addEventListener('DOMContentLoaded', () => {
             missionCards[1].querySelector('p').textContent = texts.visionText;
         }
     }
+
+    // Hero başlığını yükle
+    const heroTitle = document.querySelector('.hero-content h1');
+    heroTitle.classList.remove('loading');
 });
 
 // Add these functions to your script.js
