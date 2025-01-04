@@ -744,3 +744,24 @@ function updateCurrentLangDisplay(lang) {
         option.style.display = 'flex';
     });
 }
+
+// Görsel yönetimi için fonksiyon
+function handleResponsiveImages() {
+    const isMobile = window.innerWidth <= 600;
+    const images = document.querySelectorAll('img[data-src-mobile]');
+    
+    images.forEach(img => {
+        const mobileSrc = img.getAttribute('data-src-mobile');
+        const desktopSrc = img.getAttribute('data-src-desktop');
+        
+        if (isMobile && mobileSrc) {
+            img.src = mobileSrc;
+        } else if (desktopSrc) {
+            img.src = desktopSrc;
+        }
+    });
+}
+
+// Sayfa yüklendiğinde ve ekran boyutu değiştiğinde çalıştır
+window.addEventListener('load', handleResponsiveImages);
+window.addEventListener('resize', handleResponsiveImages);

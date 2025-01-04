@@ -19,7 +19,10 @@
     <header onclick="event.stopPropagation()">
         <div class="logo">
             <a href="/" onclick="handleLogoClick(event)">
-                <img src="assets/frigoo-logo.png" alt="Frigoo Logo">
+                <img src="assets/desktop/frigoo-logo.webp"
+                     data-src-desktop="assets/desktop/frigoo-logo.webp"
+                     data-src-mobile="assets/mobile/frigoo-logo.webp"
+                     alt="Frigoo Logo">
             </a>
         </div>
         <!-- Desktop Navigation -->
@@ -43,17 +46,29 @@
         <!-- Dil Seçici -->
         <div class="language-selector">
             <div class="current-lang" onclick="toggleLanguageMenu()">
-                <img src="assets/tr-flag.png" alt="Türkçe" class="lang-flag">
+                <img src="assets/desktop/tr-flag.webp"
+                     data-src-desktop="assets/desktop/tr-flag.webp"
+                     data-src-mobile="assets/mobile/tr-flag.webp"
+                     alt="Türkçe" 
+                     class="lang-flag">
                 <span>TR</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="lang-dropdown">
                 <a href="javascript:void(0)" onclick="changeLanguage('en')" class="lang-option">
-                    <img src="assets/en-flag.png" alt="English" class="lang-flag">
+                    <img src="assets/desktop/en-flag.webp"
+                         data-src-desktop="assets/desktop/en-flag.webp"
+                         data-src-mobile="assets/mobile/en-flag.webp"
+                         alt="English" 
+                         class="lang-flag">
                     <span>EN</span>
                 </a>
                 <a href="javascript:void(0)" onclick="changeLanguage('tr')" class="lang-option">
-                    <img src="assets/tr-flag.png" alt="Türkçe" class="lang-flag">
+                    <img src="assets/desktop/tr-flag.webp"
+                         data-src-desktop="assets/desktop/tr-flag.webp"
+                         data-src-mobile="assets/mobile/tr-flag.webp"
+                         alt="Türkçe" 
+                         class="lang-flag">
                     <span>TR</span>
                 </a>
             </div>
@@ -127,6 +142,18 @@
     </main>
 
     <footer class="footer">
+        <div class="footer-brand">
+            <img src="assets/desktop/frigoo-logo.webp"
+                 data-src-desktop="assets/desktop/frigoo-logo.webp"
+                 data-src-mobile="assets/mobile/frigoo-logo.webp"
+                 alt="Frigoo Logo" 
+                 class="footer-logo">
+            <p class="footer-desc">Hedeflerinize giden yolda size eşlik edecek arkadaşlar bulun.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/frigoo.app" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/frigoo" class="social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script type="module" src="script.js"></script>
