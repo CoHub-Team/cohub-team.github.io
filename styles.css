@@ -65,6 +65,8 @@ nav a:hover {
     background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
     position: relative;
     overflow: hidden;
+    opacity: 1;
+    visibility: visible;
 }
 
 .hero-section::before {
@@ -83,6 +85,8 @@ nav a:hover {
     max-width: 600px;
     position: relative;
     z-index: 2;
+    opacity: 1;
+    visibility: visible;
 }
 
 .hero-content h1 {
@@ -96,6 +100,9 @@ nav a:hover {
     -webkit-text-fill-color: transparent;
     font-display: swap;
     min-height: 120px;
+    opacity: 1;
+    visibility: visible;
+    animation: none;
 }
 
 .hero-content h1.loading {
@@ -117,6 +124,9 @@ nav a:hover {
     color: var(--gray);
     margin-bottom: 2.5rem;
     line-height: 1.8;
+    opacity: 1;
+    visibility: visible;
+    animation: none;
 }
 
 .hero-image {
@@ -129,6 +139,9 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    animation: none;
 }
 
 .hero-img {
@@ -151,7 +164,7 @@ nav a:hover {
 .hero-img.active {
     opacity: 1;
     display: block;
-    animation: float 6s ease-in-out infinite;
+    animation: none;
 }
 
 /* Features Section */
@@ -955,23 +968,23 @@ nav a:hover {
 }
 
 .hero-content h1 {
-    opacity: 0;
-    animation: fadeInLeft 1s ease-out forwards;
+    opacity: 1;
+    animation: none;
 }
 
 .hero-text {
-    opacity: 0;
-    animation: fadeInLeft 1s ease-out 0.3s forwards;
+    opacity: 1;
+    animation: none;
 }
 
 .cta-buttons {
-    opacity: 0;
-    animation: fadeInLeft 1s ease-out 0.6s forwards;
+    opacity: 1;
+    animation: none;
 }
 
 .hero-image {
-    opacity: 0;
-    animation: fadeInRight 1s ease-out 0.3s forwards;
+    opacity: 1;
+    animation: none;
 }
 
 /* About Page Styles */
@@ -1012,7 +1025,7 @@ nav a:hover {
 
 .about-logo img {
     height: 60px;
-    animation: float 6s ease-in-out infinite;
+    animation: none;
 }
 
 .about-content {
@@ -1086,8 +1099,9 @@ html {
 .cta-buttons {
     display: flex;
     gap: 20px;
-    opacity: 0;
-    animation: fadeInLeft 1s ease-out 0.6s forwards;
+    opacity: 1;
+    visibility: visible;
+    animation: none;
 }
 
 .primary-btn, .secondary-btn {
@@ -1453,25 +1467,25 @@ html {
 /* About hero animasyonları */
 .about-hero-content {
     opacity: 0;
-    animation: fadeInLeft 1s ease-out forwards;
+    animation: none;
     visibility: hidden;
 }
 
 .about-badge {
     opacity: 0;
-    animation: fadeInLeft 1s ease-out 0.2s forwards;
+    animation: none;
     visibility: hidden;
 }
 
 .about-hero h1 {
     opacity: 0;
-    animation: fadeInLeft 1s ease-out 0.4s forwards;
+    animation: none;
     visibility: hidden;
 }
 
 .about-hero p {
     opacity: 0;
-    animation: fadeInLeft 1s ease-out 0.6s forwards;
+    animation: none;
     visibility: hidden;
 }
 
@@ -1487,7 +1501,7 @@ html {
     z-index: 1;
     opacity: 0;
     visibility: hidden;
-    animation: fadeInRight 1s ease-out 0.3s forwards;
+    animation: none;
 }
 
 /* Hero section her zaman görünür olmalı */
