@@ -149,15 +149,6 @@ function initScrollAnimations() {
     });
 }
 
-// About hero animasyonları için
-function initAboutHeroAnimations() {
-    const elements = document.querySelectorAll('.about-hero-content, .about-badge, .about-hero h1, .about-hero p');
-    
-    elements.forEach(element => {
-        element.classList.add('visible');
-    });
-}
-
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, 0);
@@ -224,8 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Eğer about sayfasındaysak
     if (document.querySelector('.about-hero')) {
-        initAboutHeroAnimations();
-
         // Footer Links
         const footerNav = document.querySelector('.footer-nav');
         if (footerNav) {
@@ -769,3 +758,35 @@ function handleResponsiveImages() {
 // Sayfa yüklendiğinde ve ekran boyutu değiştiğinde çalıştır
 window.addEventListener('load', handleResponsiveImages);
 window.addEventListener('resize', handleResponsiveImages);
+
+// Aktif linki belirle
+function setActiveNavLink() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('nav a, .mobile-nav a');
+    
+    navLinks.forEach(link => {
+        // Önce tüm active class'ları kaldır
+        link.classList.remove('active');
+        
+        // Ana sayfa kontrolü
+        if (currentPath === '/' || currentPath === '/index.html') {
+            if (link.getAttribute('href') === '/') {
+                link.classList.add('active');
+            }
+        }
+        // Hakkımızda sayfası kontrolü
+        else if (currentPath.includes('about.html')) {
+            if (link.getAttribute('href') === 'about.html') {
+                link.classList.add('active');
+            }
+        }
+        // Hash link kontrolü (features, how-it-works gibi)
+        else if (window.location.hash && link.getAttribute('href') === window.location.hash) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Sayfa yüklendiğinde ve hash değiştiğinde çalıştır
+document.addEventListener('DOMContentLoaded', setActiveNavLink);
+window.addEventListener('hashchange', setActiveNavLink);
