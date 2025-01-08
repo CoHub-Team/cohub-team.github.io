@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Meta Etiketleri -->
     <title>Frigoo - Hedef Odaklı Arkadaşlıklar Kurun ve Başarıya Ulaşın</title>
-    <meta name="description" content="Spor, dil öğrenme ve girişimcilik gibi ortak hedeflere sahip insanlarla tanışın. Frigoo ile hedeflerinize giden yolda yalnız yürümeyin.">
-    <meta name="keywords" content="hedef bazlı arkadaşlık, networking, spor partneri, dil öğrenme arkadaşı, co-founder bulma">
+    <meta name="description"
+        content="Spor, dil öğrenme ve girişimcilik gibi ortak hedeflere sahip insanlarla tanışın. Frigoo ile hedeflerinize giden yolda yalnız yürümeyin.">
+    <meta name="keywords"
+        content="hedef bazlı arkadaşlık, networking, spor partneri, dil öğrenme arkadaşı, co-founder bulma">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" media="print"
+        onload="this.media='all'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="preload" as="image" href="assets/desktop/mainPage.webp">
-    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2" crossorigin>
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"
+        crossorigin>
     <style>
         .hero-content h1 {
             font-family: 'Poppins', sans-serif;
@@ -32,14 +39,13 @@
         }
     </style>
 </head>
+
 <body>
     <header onclick="event.stopPropagation()">
         <div class="logo">
             <a href="/" onclick="handleLogoClick(event)">
-                <img src="assets/desktop/frigoo-logo.webp"
-                     data-src-desktop="assets/desktop/frigoo-logo.webp"
-                     data-src-mobile="assets/mobile/frigoo-logo.webp"
-                     alt="Frigoo Logo">
+                <img src="assets/desktop/frigoo-logo.webp" data-src-desktop="assets/desktop/frigoo-logo.webp"
+                    data-src-mobile="assets/mobile/frigoo-logo.webp" alt="Frigoo Logo">
             </a>
         </div>
         <!-- Desktop Navigation -->
@@ -52,21 +58,20 @@
         <!-- Dil Seçici -->
         <div class="language-selector">
             <div class="current-lang" onclick="toggleLanguageMenu()">
-                <!-- <img src="assets/desktop/tr-flag.webp"
-                     data-src-desktop="assets/desktop/tr-flag.webp"
-                     data-src-mobile="assets/mobile/tr-flag.webp"
-                     alt="Türkçe" 
-                     class="lang-flag"> -->
+                <img src="assets/desktop/tr-flag.webp" data-src-desktop="assets/desktop/tr-flag.webp"
+                    data-src-mobile="assets/mobile/tr-flag.webp" alt="Türkçe" class="lang-flag">
                 <span>TR</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="lang-dropdown">
                 <a href="javascript:void(0)" onclick="changeLanguage('en')" class="lang-option">
-                    <!-- <img src="assets/desktop/en-flag.webp" alt="English" class="lang-flag"> -->
+                    <img src="assets/desktop/en-flag.webp" data-src-desktop="assets/desktop/en-flag.webp"
+                        data-src-mobile="assets/mobile/en-flag.webp" alt="English" class="lang-flag">
                     <span>EN</span>
                 </a>
                 <a href="javascript:void(0)" onclick="changeLanguage('tr')" class="lang-option">
-                    <!-- <img src="assets/desktop/tr-flag.webp" alt="Türkçe" class="lang-flag"> -->
+                    <img src="assets/desktop/tr-flag.webp" data-src-desktop="assets/desktop/tr-flag.webp"
+                        data-src-mobile="assets/mobile/tr-flag.webp" alt="Türkçe" class="lang-flag">
                     <span>TR</span>
                 </a>
             </div>
@@ -88,7 +93,8 @@
     <section class="hero-section">
         <div class="hero-content">
             <h1>Hedeflerinize Giden Yolda<br>Yalnız Değilsiniz</h1>
-            <p class="hero-text">Frigoo ile benzer hedeflere sahip insanlarla tanışın, birlikte büyüyün ve başarıya ulaşın.</p>
+            <p class="hero-text">Frigoo ile benzer hedeflere sahip insanlarla tanışın, birlikte büyüyün ve başarıya
+                ulaşın.</p>
             <div class="cta-buttons">
                 <button class="primary-btn" onclick="window.location.href='#join'">
                     <span>Beta'ya Katıl</span>
@@ -101,32 +107,30 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="assets/desktop/mainPage.webp" 
-                 data-src-desktop="assets/desktop/mainPage.webp"
-                 data-src-mobile="assets/mobile/mainPage.webp"
-                 alt="Frigoo Mobil Uygulama Arayüzü" 
-                 class="hero-img active">
-            <img src="assets/desktop/workflow.webp"
-                 data-src-desktop="assets/desktop/workflow.webp"
-                 data-src-mobile="assets/mobile/workflow.webp"
-                 alt="Frigoo Kullanım Akışı" 
-                 class="hero-img">
+            <img src="assets/desktop/mainPage.webp" data-src-desktop="assets/desktop/mainPage.webp"
+                data-src-mobile="assets/mobile/mainPage.webp" alt="Frigoo Mobil Uygulama Arayüzü"
+                class="hero-img active">
+            <img src="assets/desktop/workflow.webp" data-src-desktop="assets/desktop/workflow.webp"
+                data-src-mobile="assets/mobile/workflow.webp" alt="Frigoo Kullanım Akışı" class="hero-img">
         </div>
     </section>
 
     <section id="features" class="features-section">
         <h2>Neden Frigoo?</h2>
-        <p class="features-subtitle">Hedeflerinize ulaşmanın en etkili yolu, aynı yolda yürüyen insanlarla tanışmaktır.</p>
+        <p class="features-subtitle">Hedeflerinize ulaşmanın en etkili yolu, aynı yolda yürüyen insanlarla tanışmaktır.
+        </p>
         <div class="features-grid">
             <div class="feature-card">
                 <i class="fas fa-brain"></i>
                 <h3>Akıllı Eşleştirme</h3>
-                <p>Yapay zeka destekli sistemimiz, hedeflerinize ve ilgi alanlarınıza göre size en uygun arkadaşları bulur.</p>
+                <p>Yapay zeka destekli sistemimiz, hedeflerinize ve ilgi alanlarınıza göre size en uygun arkadaşları
+                    bulur.</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-users"></i>
                 <h3>Network Geliştirme</h3>
-                <p>Spor, dil öğrenme, girişimcilik gibi ortak hedeflere sahip kişilerle tanışın ve birlikte başarıya ulaşın.</p>
+                <p>Spor, dil öğrenme, girişimcilik gibi ortak hedeflere sahip kişilerle tanışın ve birlikte başarıya
+                    ulaşın.</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-laptop-house"></i>
@@ -162,41 +166,32 @@
         <div class="slide active">
             <div class="slide-text">
                 <h2>Girişimci Eşleştirme</h2>
-                <p>Girişimcilik hedefleri olan ve becerileri senin ihtiyacınla ölçüşen kişilerle tanış. Hayalini kurduğun girişimi beraber kurabileceğin co-founder'ını bul ve birlikte başarıya ulaşın.</p>
+                <p>Girişimcilik hedefleri olan ve becerileri senin ihtiyacınla ölçüşen kişilerle tanış. Hayalini
+                    kurduğun girişimi beraber kurabileceğin co-founder'ını bul ve birlikte başarıya ulaşın.</p>
             </div>
             <div class="slide-image">
-                <img src="assets/desktop/entrepeuner.webp"
-                     data-src-desktop="assets/desktop/entrepeuner.webp"
-                     data-src-mobile="assets/mobile/entrepeuner.webp"
-                     alt="Girişimci Eşleştirme" 
-                     class="lang-image tr-image">
-                <img src="assets/desktop/entrepeuner2.webp"
-                     data-src-desktop="assets/desktop/entrepeuner2.webp"
-                     data-src-mobile="assets/mobile/entrepeuner2.webp"
-                     alt="Entrepreneur Matching" 
-                     class="lang-image en-image" 
-                     style="display: none;">
+                <img src="assets/desktop/entrepeuner.webp" data-src-desktop="assets/desktop/entrepeuner.webp"
+                    data-src-mobile="assets/mobile/entrepeuner.webp" alt="Girişimci Eşleştirme"
+                    class="lang-image tr-image">
+                <img src="assets/desktop/entrepeuner2.webp" data-src-desktop="assets/desktop/entrepeuner2.webp"
+                    data-src-mobile="assets/mobile/entrepeuner2.webp" alt="Entrepreneur Matching"
+                    class="lang-image en-image" style="display: none;">
             </div>
         </div>
 
         <!-- Slayt 2 -->
         <div class="slide">
             <div class="slide-image">
-                <img src="assets/desktop/running.webp"
-                     data-src-desktop="assets/desktop/running.webp"
-                     data-src-mobile="assets/mobile/running.webp"
-                     alt="Koşu Arkadaşı" 
-                     class="lang-image tr-image">
-                <img src="assets/desktop/running2.webp"
-                     data-src-desktop="assets/desktop/running2.webp"
-                     data-src-mobile="assets/mobile/running2.webp"
-                     alt="Running Buddy" 
-                     class="lang-image en-image" 
-                     style="display: none;">
+                <img src="assets/desktop/running.webp" data-src-desktop="assets/desktop/running.webp"
+                    data-src-mobile="assets/mobile/running.webp" alt="Koşu Arkadaşı" class="lang-image tr-image">
+                <img src="assets/desktop/running2.webp" data-src-desktop="assets/desktop/running2.webp"
+                    data-src-mobile="assets/mobile/running2.webp" alt="Running Buddy" class="lang-image en-image"
+                    style="display: none;">
             </div>
             <div class="slide-text">
                 <h2>Koşu Partneri</h2>
-                <p>Seviyene uygun bir koşu arkadaşı bul ve motivasyonunu yüksek tut. Birlikte koşarak hedeflerine daha hızlı ulaş.</p>
+                <p>Seviyene uygun bir koşu arkadaşı bul ve motivasyonunu yüksek tut. Birlikte koşarak hedeflerine daha
+                    hızlı ulaş.</p>
             </div>
         </div>
 
@@ -204,41 +199,31 @@
         <div class="slide">
             <div class="slide-text">
                 <h2>Dil Pratiği</h2>
-                <p>İster yeni başlamış ol, ister ilerliyor ol - hedefindeki dil için mükemmel bir pratik arkadaşı bul. Gerçek konuşmalarla dil öğrenimini turbo hızda ilerlet ve akıcı konuşmaya başla!</p>
+                <p>İster yeni başlamış ol, ister ilerliyor ol - hedefindeki dil için mükemmel bir pratik arkadaşı bul.
+                    Gerçek konuşmalarla dil öğrenimini turbo hızda ilerlet ve akıcı konuşmaya başla!</p>
             </div>
             <div class="slide-image">
-                <img src="assets/desktop/language.webp"
-                     data-src-desktop="assets/desktop/language.webp"
-                     data-src-mobile="assets/mobile/language.webp"
-                     alt="Dil Arkadaşı" 
-                     class="lang-image tr-image">
-                <img src="assets/desktop/language2.webp"
-                     data-src-desktop="assets/desktop/language2.webp"
-                     data-src-mobile="assets/mobile/language2.webp"
-                     alt="Language Partner" 
-                     class="lang-image en-image" 
-                     style="display: none;">
+                <img src="assets/desktop/language.webp" data-src-desktop="assets/desktop/language.webp"
+                    data-src-mobile="assets/mobile/language.webp" alt="Dil Arkadaşı" class="lang-image tr-image">
+                <img src="assets/desktop/language2.webp" data-src-desktop="assets/desktop/language2.webp"
+                    data-src-mobile="assets/mobile/language2.webp" alt="Language Partner" class="lang-image en-image"
+                    style="display: none;">
             </div>
         </div>
 
         <!-- Slayt 4 -->
         <div class="slide">
             <div class="slide-image">
-                <img src="assets/desktop/pilates.webp"
-                     data-src-desktop="assets/desktop/pilates.webp"
-                     data-src-mobile="assets/mobile/pilates.webp"
-                     alt="Pilates Arkadaşı" 
-                     class="lang-image tr-image">
-                <img src="assets/desktop/pilates2.webp"
-                     data-src-desktop="assets/desktop/pilates2.webp"
-                     data-src-mobile="assets/mobile/pilates2.webp"
-                     alt="Pilates Partner" 
-                     class="lang-image en-image" 
-                     style="display: none;">
+                <img src="assets/desktop/pilates.webp" data-src-desktop="assets/desktop/pilates.webp"
+                    data-src-mobile="assets/mobile/pilates.webp" alt="Pilates Arkadaşı" class="lang-image tr-image">
+                <img src="assets/desktop/pilates2.webp" data-src-desktop="assets/desktop/pilates2.webp"
+                    data-src-mobile="assets/mobile/pilates2.webp" alt="Pilates Partner" class="lang-image en-image"
+                    style="display: none;">
             </div>
             <div class="slide-text">
                 <h2>Pilates & Yoga</h2>
-                <p>Pilates veya yoga pratiklerini birlikte yapabileceğin bir partner bul. Düzenli egzersiz yaparak hem zihinsel hem de fiziksel sağlığını iyileştir.</p>
+                <p>Pilates veya yoga pratiklerini birlikte yapabileceğin bir partner bul. Düzenli egzersiz yaparak hem
+                    zihinsel hem de fiziksel sağlığını iyileştir.</p>
             </div>
         </div>
     </section>
@@ -278,11 +263,13 @@
                     <img src="assets/desktop/frigoo-logo.webp" alt="Frigoo Logo" class="footer-logo">
                     <p class="footer-desc">Hedeflerinize giden yolda size eşlik edecek arkadaşlar bulun.</p>
                     <div class="social-links">
-                        <a href="https://instagram.com/frigoo.app" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/frigoo" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://instagram.com/frigoo.app" class="social-link"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/frigoo" class="social-link"><i
+                                class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-links-group">
                     <h4>Keşfet</h4>
                     <nav class="footer-nav">
@@ -300,7 +287,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p class="copyright">&copy; 2025 Frigoo. Tüm hakları saklıdır.</p>
             </div>
@@ -310,4 +297,5 @@
     <!-- Firebase ve diğer scriptler -->
     <script defer type="module" src="script.js"></script>
 </body>
+
 </html>

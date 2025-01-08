@@ -312,6 +312,7 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
 const translations = {
     tr: {
         // Navigation
+        home: "Anasayfa",
         features: "Özellikler",
         howItWorks: "Nasıl Çalışır",
         aboutUs: "Hakkımızda",
@@ -405,6 +406,7 @@ const translations = {
     },
     en: {
         // Navigation
+        home: "Home",
         features: "Features",
         howItWorks: "How It Works",
         aboutUs: "About Us",
@@ -582,6 +584,7 @@ function updatePageContent(lang) {
     // Nav linkleri ve dil göstergesi (her sayfada ortak)
     document.querySelectorAll('nav a, .mobile-nav a').forEach(link => {
         const href = link.getAttribute('href');
+        if (href === '/') link.textContent = texts.home;
         if (href === '#features' || href === '/#features') link.textContent = texts.features;
         if (href === '#how-it-works' || href === '/#how-it-works') link.textContent = texts.howItWorks;
         if (href === 'about.html') link.textContent = texts.aboutUs;
